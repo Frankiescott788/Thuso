@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family : 'Poppins', sans-serif;
+}
+
+.hero-section{
+  background-image: linear-gradient(to right, rgba(0 ,0, 0, 0.5), rgba(0 ,0, 0, 0.5)), url('https://plus.unsplash.com/premium_photo-1673438132288-e8787f60ccb9?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.aside-nav > li{
+  margin-block: 10px;
+}
+a.active{
+  border-bottom: 2px solid #0496ff;
+  color: #0496ff;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
