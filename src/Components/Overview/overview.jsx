@@ -13,6 +13,9 @@ import DoughnutChart from "../chartjs/users";
 import { users, Users } from "../../data/users";
 
 const Overview = () => {
+
+  const active_users = users.filter(user => user.availability === 'online');
+
   return (
     <section>
       <div>
@@ -58,7 +61,7 @@ const Overview = () => {
               <div>
                 <p className="text-gray-400">Total Users</p>
                 <div className="flex">
-                  <p className="text-2xl">54</p>
+                  <p className="text-2xl">{users.length}</p>
                   <p className="ms-[5rem] text-sm mt-2 text-success-400 font-bold">
                     08%
                   </p>
@@ -107,7 +110,7 @@ const Overview = () => {
               <div>
                 <p className="text-gray-400">Active users</p>
                 <div className="flex">
-                  <p className="text-2xl">54</p>
+                  <p className="text-2xl">{active_users.length}</p>
                   <p className="ms-[5rem] text-sm mt-2 text-success-400 font-bold">
                     08%
                   </p>

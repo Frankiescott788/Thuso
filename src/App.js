@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Pages/Home/home";
 import Dashboard_layout from "./Layouts/dashboards";
 import Overview from "./Components/Overview/overview";
+import Detections from "./Components/Pages/detections/detections";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         </Route>
         <Route path="/dashboard/*" element={<Dashboard_layout />}>
           <Route index element={<Overview />} />
+          <Route path="detections" element={<Detections />}/>
         </Route>
       </Routes>
     </BrowserRouter>

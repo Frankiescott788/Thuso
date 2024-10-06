@@ -9,7 +9,7 @@ body {
 }
 
 .aside-nav > li{
-  margin-block: 10px;
+  margin-block: 12px;
 }
 a.active{
   border-bottom: 2px solid #0496ff;
