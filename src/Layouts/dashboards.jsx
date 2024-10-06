@@ -1,25 +1,35 @@
-import { Avatar, Badge, Divider } from "@nextui-org/react";
+import { Avatar, Badge, BreadcrumbItem, Breadcrumbs, Divider, Image } from "@nextui-org/react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import Logo from '../Assets/pictures/Screenshot from 2024-10-05 15-07-52.png'
+import { p } from "framer-motion/client";
 
 const Dashboard_layout = () => {
-
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   return (
     <>
-      <aside className="fixed top-0  bottom-0 left-0 grid grid-cols-12">
+      <aside className="fixed top-0  bottom-0 left-0 grid grid-cols-12 z-30">
         <div className="col-span-6 border-r px-1 ">
-          <div>Logo here</div>
-          <ul className="aside-nav mt-14">
-            <li className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${ pathname === '/dashboard/' ? "bg-[#0496ff] text-white" : ''} text-gray-400 `} onClick={() => navigate('/dashboard/')}>
+          <div>
+            <Image src={Logo} className="h-[3rem] mt-3 ms-10"/>
+          </div>
+          <ul className="aside-nav mt-10">
+            <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/" ? "bg-[#0496ff] text-white" : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/")}
+            >
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width={24}
                   height={24}
-                  color={`${ pathname === '/dashboard/' ? "white" : "#9ca3af"} text-gray-400 `}
+                  color={`${
+                    pathname === "/dashboard/" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
                   fill={"none"}
                 >
                   <path
@@ -47,14 +57,21 @@ const Dashboard_layout = () => {
               <div>Overview</div>
             </li>
 
-            <li className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${ pathname === '/dashboard/users' ? "bg-[#0496ff] text-white" : ''} text-gray-400 `} onClick={() => navigate('/dashboard/users')}>
+            <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/users" ? "bg-[#0496ff] text-white" : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/users")}
+            >
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width={24}
                   height={24}
-                  color={`${ pathname === '/dashboard/users' ? "white" : "#9ca3af"} text-gray-400 `}
+                  color={`${
+                    pathname === "/dashboard/users" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
                   fill={"none"}
                 >
                   <path
@@ -87,14 +104,23 @@ const Dashboard_layout = () => {
               <div>Users</div>
             </li>
 
-            <li className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${ pathname === '/dashboard/detections' ? "bg-[#0496ff] text-white" : ''} text-gray-400 `} onClick={() => navigate('/dashboard/detections')}>
+            <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/detections"
+                  ? "bg-[#0496ff] text-white"
+                  : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/detections")}
+            >
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width={24}
                   height={24}
-                  color={`${ pathname === '/dashboard/users' ? "white" : "#9ca3af"} text-gray-400 `}
+                  color={`${
+                    pathname === "/dashboard/users" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
                   fill={"none"}
                 >
                   <path
@@ -126,14 +152,55 @@ const Dashboard_layout = () => {
               <div>Data Detection</div>
             </li>
 
-            <li className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${ pathname === '/dashboard/metrics' ? "bg-[#0496ff] text-white" : ''} text-gray-400 `} onClick={() => navigate('/dashboard/metrics')}>
+            <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/map" ? "bg-[#0496ff] text-white" : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/map")}
+            >
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width={24}
                   height={24}
-                  color={`${ pathname === '/dashboard/metrics' ? "white" : "#9ca3af"} text-gray-400 `}
+                  color={`${
+                    pathname === "/dashboard/map" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
+                  fill={"none"}
+                >
+                  <path
+                    d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </div>
+              <div>Bot Tracker</div>
+            </li>
+
+            {/* <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/metrics"
+                  ? "bg-[#0496ff] text-white"
+                  : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/metrics")}
+            >
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                  color={`${
+                    pathname === "/dashboard/metrics" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
                   fill={"none"}
                 >
                   <path
@@ -153,14 +220,23 @@ const Dashboard_layout = () => {
               </div>
               <div>Bot Metrics</div>
             </li>
-            <li className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${ pathname === '/dashboard/firmware' ? "bg-[#0496ff] text-white" : ''} text-gray-400 `} onClick={() => navigate('/dashboard/firmware')}>
+            <li
+              className={` cursor-pointer flex gap-1 pr-[5rem] pl-3 py-2 rounded ${
+                pathname === "/dashboard/firmware"
+                  ? "bg-[#0496ff] text-white"
+                  : ""
+              } text-gray-400 `}
+              onClick={() => navigate("/dashboard/firmware")}
+            >
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width={24}
                   height={24}
-                  color={`${ pathname === '/dashboard/firmware' ? "white" : "#9ca3af"} text-gray-400 `}
+                  color={`${
+                    pathname === "/dashboard/firmware" ? "white" : "#9ca3af"
+                  } text-gray-400 `}
                   fill={"none"}
                 >
                   <path
@@ -183,14 +259,50 @@ const Dashboard_layout = () => {
                 </svg>
               </div>
               <div>Firmware</div>
-            </li>
+            </li> */}
           </ul>
+          <div className="absolute bottom-0 mb-4">
+            <Image src="https://img.freepik.com/premium-photo/3d-laptop-icon-with-holographic-encryption-firewall-icons-screen-modern-workspace_980716-467291.jpg?size=626&ext=jpg"
+              className="h-[10rem]"
+            />
+            <p>24 Hours Service</p>
+          </div>
         </div>
       </aside>
-      <nav className="fixed top-0 right-0 left-0 border-b ms-[15.5rem] py-4 px-3">
+      <nav className="fixed top-0 right-0 left-0 border-b ms-[15.5rem] py-4 px-3 bg-white z-20">
         <div className="flex justify-between">
           <div>
-            <p className="mt-1 text-gray-400">Dashboard</p>
+            {
+            pathname === '/dashboard/' ? <Breadcrumbs className="mt-2"><BreadcrumbItem>Home</BreadcrumbItem></Breadcrumbs> 
+            : pathname === '/dashboard/users' ? (
+              <Breadcrumbs className="mt-2">
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>users</BreadcrumbItem>
+              </Breadcrumbs>
+            )
+            : pathname === '/dashboard/detections' ? (
+              <Breadcrumbs className="mt-2">
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>Detections</BreadcrumbItem>
+              </Breadcrumbs>
+            ) : pathname === '/dashboard/map' ? (
+              <Breadcrumbs className="mt-2">
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>Bot tracker</BreadcrumbItem>
+              </Breadcrumbs>
+            ) : pathname === '/dashboard/metrics' ? (
+              <Breadcrumbs className="mt-2">
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>Metrics</BreadcrumbItem>
+              </Breadcrumbs>
+            ) : pathname === '/dashboard/firmware' ? (
+              <Breadcrumbs className="mt-2">
+                <BreadcrumbItem>Home</BreadcrumbItem>
+                <BreadcrumbItem>Firmware</BreadcrumbItem>
+              </Breadcrumbs>
+            ) : ''
+            
+          }
           </div>
           <div className="flex gap-3">
             <div className="flex gap-5">

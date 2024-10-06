@@ -5,6 +5,8 @@ import Home from "./Components/Pages/Home/home";
 import Dashboard_layout from "./Layouts/dashboards";
 import Overview from "./Components/Overview/overview";
 import Detections from "./Components/Pages/detections/detections";
+import LeafletMapComponent from "./map/map";
+import Users from "./Components/Pages/users/users";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/dashboard/*" element={<Dashboard_layout />}>
           <Route index element={<Overview />} />
           <Route path="detections" element={<Detections />}/>
+          <Route path="map" element={<LeafletMapComponent />}/>
+          <Route path="users" element={<Users />}/>
         </Route>
       </Routes>
     </BrowserRouter>
