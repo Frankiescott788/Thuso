@@ -7,13 +7,14 @@ import Overview from "./Components/Overview/overview";
 import Detections from "./Components/Pages/detections/detections";
 import LeafletMapComponent from "./map/map";
 import Users from "./Components/Pages/users/users";
+import Signin from "./Components/Pages/auth/signin";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        
-        <Route path="/*" element={<Navbar />}>
+        <Route path="/" element={<Signin />}/>
+        <Route path="/landing" element={<Navbar />}>
           <Route index element={<Home />}/>
         </Route>
         <Route path="/dashboard/*" element={<Dashboard_layout />}>

@@ -11,17 +11,25 @@ import {
 import Linechart from "../chartjs/chart";
 import DoughnutChart from "../chartjs/users";
 import { users, Users } from "../../data/users";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Overview = () => {
-
+  const [time, setTime] = useState('');
   const active_users = users.filter(user => user.availability === 'online');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let hours = new Date().getHours();
+    setTime(hours);
+  }, []);
 
   return (
     <section>
       <div>
         <div className="pb-8 flex justify-between">
           <div>
-            <p className="text-2xl">Good Morning frankie</p>
+            <p className="text-2xl greeting-text">{time < 12 ? 'Good Morning' : time < 17 ? 'Good Day' : 'Good Evening'}, Frankie</p>
             <p className="text-tiny text-gray-400">Dashboard overview</p>
           </div>
           <div className="me-[5rem] border-success-400 pt-4 px-[2rem] rounded-md bg-success-50">
@@ -154,6 +162,7 @@ const Overview = () => {
               <Button
                 className="bg-[#0496ff] text-white shadow-shadowed_btn rounded-full"
                 size="sm"
+                onClick={() => navigate('/dashboard/users')}
               >
                 {" "}
                 View All{" "}

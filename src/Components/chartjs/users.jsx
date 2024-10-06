@@ -6,7 +6,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
   const data = {
-    labels: ['Obstacles Type A', 'Obstacles Type B', 'Obstacles Type C', 'Obstacles Type D'],
+    labels: ['Potholes', 'Accidents', 'Traffic Lights', 'Steps'],
     datasets: [
       {
         label: '# of Obstacles',

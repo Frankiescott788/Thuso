@@ -1,4 +1,4 @@
-import { Avatar, Badge, BreadcrumbItem, Breadcrumbs, Divider, Image } from "@nextui-org/react";
+import { Avatar, Badge, BreadcrumbItem, Breadcrumbs, Divider, Image, User } from "@nextui-org/react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Logo from '../Assets/pictures/Screenshot from 2024-10-05 15-07-52.png'
 import { p } from "framer-motion/client";
@@ -261,11 +261,11 @@ const Dashboard_layout = () => {
               <div>Firmware</div>
             </li> */}
           </ul>
-          <div className="absolute bottom-0 mb-4">
+          <div className="absolute bottom-0 mb-5 ms-[3rem]">
             <Image src="https://img.freepik.com/premium-photo/3d-laptop-icon-with-holographic-encryption-firewall-icons-screen-modern-workspace_980716-467291.jpg?size=626&ext=jpg"
               className="h-[10rem]"
             />
-            <p>24 Hours Service</p>
+            <p className="font-semibold">24 Hours Service</p>
           </div>
         </div>
       </aside>
@@ -363,7 +363,10 @@ const Dashboard_layout = () => {
             </div>
             <div className="flex gap-4">
               <Divider orientation="vertical" />
-              <Avatar isBordered size="sm" />
+              <User
+                name="kamogelo"
+                description="kamogelosithole@gmail.com"
+              />
             </div>
           </div>
         </div>

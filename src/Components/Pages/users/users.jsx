@@ -7,9 +7,16 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
+import { useState } from "react";
 import { users } from "../../../data/users";
 
 const Users = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter users based on search query
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <section>
@@ -27,6 +34,8 @@ const Users = () => {
             type="search"
             className="w-[17rem] me-5"
             placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
             startContent={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +64,8 @@ const Users = () => {
         </div>
       </div>
       <div className="grid grid-cols-12 gap-5">
-        {users.map((user) => (
-          <Card className="col-span-4">
+        {filteredUsers.map((user) => (
+          <Card key={user.id} className="col-span-4">
             <CardHeader className="justify-between">
               <div className="flex gap-5">
                 <Avatar isBordered radius="full" size="md" />
@@ -71,8 +80,7 @@ const Users = () => {
                         : "bg-danger-100 text-danger-400"
                     }`}
                   >
-                    {" "}
-                    {user.availability}{" "}
+                    {user.availability}
                   </h5>
                 </div>
               </div>
@@ -142,47 +150,7 @@ const Users = () => {
                       strokeLinejoin="round"
                     />
                     <path
-                      d="M17 8L18.0438 7.12348C19.3585 6.0195 20.0159 5.46751 19.9997 4.96618C19.9931 4.76236 19.9274 4.56553 19.8112 4.40207C19.5254 4 18.6836 4 17 4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M17 15L18.0438 14.1235C19.3585 13.0195 20.0159 12.4675 19.9997 11.9662C19.9931 11.7624 19.9274 11.5655 19.8112 11.4021C19.5254 11 18.6836 11 17 11"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M7 15L5.95617 14.1235C4.64147 13.0195 3.98413 12.4675 4.00029 11.9662C4.00686 11.7624 4.07264 11.5655 4.18881 11.4021C4.47455 11 5.31637 11 7 11"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="text-tiny">{user.interactions}</div>
-              </span>
-              <span className="pt-2 flex gap-1">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width={16}
-                    height={16}
-                    color={"#9ca3af"}
-                    fill={"none"}
-                  >
-                    <path
-                      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    />
-                    <path
-                      d="M8 12.5L10.5 15L16 9"
+                      d="M17 8L18.0438 7.12348C19.3585 6.0195 20.0159 5.46751 19.9997 4.96618C19.9931 4.76236 19.9274 4.56553 19.8112 4.40207C19.5255 4 18.6836 4 17 4"
                       stroke="currentColor"
                       strokeWidth="1.5"
                       strokeLinecap="round"
@@ -193,7 +161,11 @@ const Users = () => {
                 <div className="text-tiny">{user.successRate}</div>
               </span>
             </CardBody>
-            <CardFooter className="gap-3"></CardFooter>
+            <CardFooter className="pt-2">
+              <Button color="default" radius="full">
+                View Profile
+              </Button>
+            </CardFooter>
           </Card>
         ))}
       </div>
