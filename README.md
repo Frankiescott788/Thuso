@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+```markdown
+# Thuso Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Thuso is an innovative project designed to assist blind individuals with navigation and object detection. The project was presented at the GeekLucha Annual Hackathon, where it proudly took 3rd place. It combines a physical bot called Thuso with a web application for monitoring and managing the bots remotely. The goal is to make everyday tasks safer and more manageable for visually impaired people.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+- **Thuso Bot**: A physical robot designed to assist blind people in navigating their surroundings and detecting obstacles.
+- **Web Application**: A centralized platform for monitoring the bot's performance, real-time location, and providing administrative control to oversee the assistance provided to users.
 
-### `npm start`
+## Objective
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To enhance the safety and mobility of blind individuals by providing them with a tool that can navigate spaces and detect obstacles, while allowing a web-based system to monitor and manage the bot’s activity.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Navigation Assistance**: Thuso provides audio cues to guide users through their environment.
+- **Object Detection**: The bot detects obstacles and informs the user to avoid collisions.
+- **Real-Time Monitoring**: The web application enables administrators to track the bot’s status, location, and activities in real-time.
+- **User Management**: Allows operators to monitor and control multiple bots remotely.
+- **Feedback System**: Users can report issues or request help via the web application, which can then be addressed by the monitoring team.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Frontend**: React, Tailwind CSS (for the web application)
+- **Backend**: Firebase
+- **Bot Technology**: Sensors and embedded systems for object detection and navigation
+- **Additional Tools**:
+  - WebSocket for real-time communication between the bot and the web application
+  - Leaflet API (for navigation-related features)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the Thuso web application locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/username/thuso-web.git
+    cd thuso-web
+    ```
 
-### `npm run eject`
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Access the web application at [http://localhost:3000](http://localhost:3000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How It Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **User Registration**: Blind users can sign up for the service and link their Thuso bot to their account.
+- **Navigation**: The Thuso bot guides the user through the environment by providing audio cues and alerts when obstacles are detected.
+- **Monitoring**: The web application serves as the central hub for administrators to monitor the bot’s activity, track its location, and respond to requests for assistance.
+- **Real-Time Feedback**: The bot communicates with the web application to send real-time updates on its current status and surroundings.
 
-## Learn More
+## Impact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Improved Mobility**: Empower blind individuals by enhancing their ability to navigate public and private spaces independently.
+- **Increased Safety**: Detecting obstacles and preventing collisions reduces the risk of accidents and injuries.
+- **Centralized Monitoring**: Administrators can oversee multiple bots in real-time, ensuring that assistance is always available.
+- **Accessibility**: The solution makes daily activities more accessible and manageable for blind individuals.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Work
 
-### Code Splitting
+- **Scalability**: Increase the number of bots available to cover more regions and improve accessibility.
+- **Advanced Object Detection**: Improve the bot's object detection capabilities using machine learning and AI.
+- **Mobile App**: Develop a mobile app to allow users and administrators to access the system on-the-go.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was presented at the GeekLucha Annual Hackathon, where it earned 3rd place. We thank the organizers and fellow participants for their support and inspiration.
+```
